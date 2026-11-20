@@ -1,0 +1,181 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model SiteConfig {
+  id                String   @id @default("default")
+  businessName      String   @default("PureGrid Systems")
+  tagline           String   @default("Commercial RO & Rooftop Solar")
+  phone             String   @default("+91 98765 43210")
+  whatsapp          String   @default("919876543210")
+  email             String   @default("contact@puregridsystems.in")
+  address           String   @default("Plot 42, Green Utility Infrastructure Park, Industrial Area, India")
+  serviceCities     String   @default("Visakhapatnam, Vijayawada, Guntur, Tirupati")
+  heroTitle         String   @default("Pure Water for Enterprise. Clean Solar for Your Home.")
+  heroSubtitle      String   @default("Commercial RO and residential rooftop solar solutions.")
+  heroBannerUrl     String?
+  roBannerUrl       String?
+  solarBannerUrl    String?
+  codEnabled        Boolean  @default(true)
+  onlinePayEnabled  Boolean  @default(true)
+  shippingFlatFee   Float    @default(99.0)
+  freeShippingAbove Float    @default(2500.0)
+  updatedAt         DateTime @updatedAt
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  vertical    String
+  description String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+}
+
+model Product {
+  id             String      @id @default(cuid())
+  slug           String      @unique
+  name           String
+  sku            String      @unique
+  vertical       String
+  shortSummary   String
+  description    String
+  price          Float
+  compareAtPrice Float?
+  gstPercent     Float       @default(18.0)
+  stockQuantity  Int         @default(0)
+  isFeatured     Boolean     @default(false)
+  isPublished    Boolean     @default(true)
+  images         String      @default("[]")
+  specifications String      @default("[]")
+  categoryId     String
+  category       Category    @relation(fields: [categoryId], references: [id])
+  orderItems     OrderItem[]
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Order {
+  id                String      @id @default(cuid())
+  orderNumber       String      @unique
+  customerName      String
+  customerPhone     String
+  customerEmail     String?
+  shippingAddress   String
+  city              String
+  state             String
+  pincode           String
+  paymentMethod     String
+  paymentStatus     String      @default("PENDING")
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  orderStatus       String      @default("PLACED")
+  courierName       String?
+  trackingNumber    String?
+  subtotal          Float
+  gstAmount         Float
+  shippingFee       Float
+  totalAmount       Float
+  items             OrderItem[]
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+  productName String
+  sku         String
+  quantity    Int
+  unitPrice   Float
+  gstPercent  Float
+}
+
+model InspectionBooking {
+  id            String   @id @default(cuid())
+  bookingNumber String   @unique
+  serviceType   String
+  customerName  String
+  customerPhone String
+  customerEmail String?
+  address       String
+  city          String
+  pincode       String
+  preferredDate String
+  timeSlot      String
+  notes         String?
+  assignedTech  String?
+  status        String   @default("PENDING")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model LeadQuote {
+  id               String   @id @default(cuid())
+  leadNumber       String   @unique
+  serviceType      String
+  customerName     String
+  customerPhone    String
+  customerEmail    String?
+  city             String
+  technicalDetails String
+  status           String   @default("NEW")
+  adminNotes       String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model PortfolioProject {
+  id          String   @id @default(cuid())
+  title       String
+  vertical    String
+  location    String
+  capacity    String
+  summary     String
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+}
+
+model CustomerUser {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  phone        String
+  passwordHash String
+  companyName  String?
+  gstin        String?
+  address      String?
+  city         String?
+  state        String?   @default("Andhra Pradesh")
+  pincode      String?
+  isActive     Boolean   @default(true)
+  role         String    @default("customer")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
