@@ -124,10 +124,11 @@ export default function Footer() {
           {/* Column 1: Identity & Customer Credentials (2 Cols) */}
           <div className="lg:col-span-2 space-y-3.5">
             <Link href="/" className="inline-flex items-center space-x-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-[#0A192F] p-0.5 border border-slate-700 flex items-center justify-center relative overflow-hidden shadow-xs">
-                <Droplets className="w-3.5 h-3.5 text-[#0284C7] absolute left-1 bottom-1" />
-                <Sun className="w-3.5 h-3.5 text-[#D97706] absolute right-1 top-1" />
-              </div>
+              <img
+                src="/logo-mark.svg"
+                alt="AQUASOL Logo"
+                className="w-8 h-8 rounded-lg shadow-xs group-hover:scale-105 transition-transform shrink-0"
+              />
               <div className="flex flex-col">
                 <div className="flex items-center tracking-tight">
                   <span className="text-lg font-black text-[#0284C7]">AQUA</span>

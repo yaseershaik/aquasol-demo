@@ -1,6 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#0A1628"/>
-  <path d="M32 10C32 10 16 28 16 38C16 47 23 54 32 54C41 54 48 47 48 38C48 28 32 10 32 10Z" fill="#0EA5E9"/>
-  <circle cx="44" cy="20" r="8" fill="#F59E0B"/>
-  <path d="M24 38C24 32 28 26 32 22" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8"/>
+  <defs>
+    <linearGradient id="favAqua" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="favSolar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="64" height="64" rx="14" fill="#0A192F"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" stroke="#1E293B" stroke-width="2"/>
+  
+  <!-- Solar Sun Energy Rays (Top Right) -->
+  <circle cx="41" cy="23" r="10" fill="url(#favSolar)"/>
+  <path d="M41 9V5M41 41V37M55 23H59M27 23H23M51 13L54 10M31 33L28 36M51 33L54 36M31 13L28 10" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Pure Aqua Water Droplet (Foreground) -->
+  <path d="M28 17C28 17 14 33 14 43C14 50.732 20.268 57 28 57C35.732 57 42 50.732 42 43C42 33 28 17 28 17Z" fill="url(#favAqua)"/>
+  <!-- Droplet Highlight -->
+  <path d="M22 41C22 36 24 31 28 26" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.85"/>
 </svg>

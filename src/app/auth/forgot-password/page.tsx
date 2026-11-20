@@ -108,10 +108,11 @@ export default function ForgotPasswordPage() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         {/* Brand Mark */}
         <Link href="/" className="inline-flex flex-col items-center group select-none mb-3">
-          <div className="w-12 h-12 rounded-xl bg-[#0A192F] p-1 border border-slate-300 flex items-center justify-center relative overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
-            <Droplets className="w-5 h-5 text-[#0284C7] absolute left-1 bottom-1" />
-            <Sun className="w-5 h-5 text-[#D97706] absolute right-1 top-1" />
-          </div>
+          <img
+            src="/logo-mark.svg"
+            alt="AQUASOL Logo"
+            className="w-12 h-12 rounded-xl shadow-sm group-hover:scale-105 transition-transform"
+          />
           <div className="flex items-center leading-none mt-2.5">
             <span className="text-2xl font-black text-[#0284C7] tracking-tight">AQUA</span>
             <span className="text-2xl font-black text-[#D97706] tracking-tight">SOL</span>

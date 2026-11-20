@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: "AQUASOL Systems | Commercial RO Water Plants & Residential Rooftop Solar",
   description:
     "AQUASOL engineers high-performance commercial reverse osmosis plants (250-50,000 LPH), provides authentic RO spare parts with live inventory, and installs rooftop solar with PM Surya Ghar subsidy support.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

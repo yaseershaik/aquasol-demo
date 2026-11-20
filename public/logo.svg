@@ -1,36 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
   <defs>
-    <linearGradient id="aquaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F0FF" />
-      <stop offset="100%" stop-color="#0284C7" />
+    <linearGradient id="logoAqua" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
     </linearGradient>
-    <linearGradient id="solarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FDE047" />
-      <stop offset="50%" stop-color="#F59E0B" />
-      <stop offset="100%" stop-color="#D97706" />
+    <linearGradient id="logoSolar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
     </linearGradient>
-    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
-  <!-- Clean Outer Monogram Container -->
-  <rect width="100" height="100" rx="26" fill="url(#aquaGrad)" fill-opacity="0.1" />
-  
-  <!-- Stylized Solar Sun Rays (Top Right Arc) -->
-  <circle cx="62" cy="38" r="20" stroke="url(#solarGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="24 16" filter="url(#glowEffect)" />
-  <circle cx="62" cy="38" r="8" fill="url(#solarGrad)" />
+  <!-- Emblem Container -->
+  <g transform="translate(10, 10)">
+    <rect width="60" height="60" rx="14" fill="#0A192F"/>
+    <rect x="1.5" y="1.5" width="57" height="57" rx="12.5" stroke="#1E293B" stroke-width="2"/>
+    
+    <!-- Sun -->
+    <circle cx="39" cy="21" r="9.5" fill="url(#logoSolar)"/>
+    <path d="M39 8V4M39 38V34M52 21H56M26 21H22M48 12L51 9M29 30L26 33M48 30L51 33M29 12L26 9" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
 
-  <!-- Pure Water Droplet (Foreground, Left to Center) -->
-  <path d="M38 24C38 24 20 45 20 58C20 68 28 76 38 76C48 76 56 68 56 58C56 45 38 24 38 24Z" 
-        fill="url(#aquaGrad)" 
-        filter="url(#glowEffect)" />
+    <!-- Water Drop -->
+    <path d="M26 16C26 16 13 31 13 40C13 47.18 18.82 53 26 53C33.18 53 39 47.18 39 40C39 31 26 16 26 16Z" fill="url(#logoAqua)"/>
+    <path d="M20 38C20 33 22 29 26 24" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.85"/>
+  </g>
 
-  <!-- Droplet Internal Light Refraction Arc -->
-  <path d="M28 56C28 50 32 44 38 38" 
-        stroke="#FFFFFF" 
-        stroke-width="3" 
-        stroke-linecap="round" 
-        stroke-opacity="0.75" />
+  <!-- Typography -->
+  <text x="84" y="46" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="34" letter-spacing="-0.5">
+    <tspan fill="#0284C7">AQUA</tspan><tspan fill="#D97706">SOL</tspan>
+  </text>
+  <text x="85" y="62" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10.5" fill="#64748B" letter-spacing="2">
+    WATER &amp; SOLAR SYSTEMS
+  </text>
 </svg>

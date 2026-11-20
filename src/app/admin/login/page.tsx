@@ -71,10 +71,11 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 selection:bg-[#0284C7] selection:text-white">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         {/* Customer Branding Logo */}
-        <div className="w-14 h-14 rounded-2xl bg-[#0A192F] p-1 border border-slate-300 flex items-center justify-center relative overflow-hidden mx-auto shadow-md">
-          <Droplets className="w-6 h-6 text-[#0284C7] absolute left-1.5 bottom-1.5" />
-          <Sun className="w-6 h-6 text-[#D97706] absolute right-1.5 top-1.5" />
-        </div>
+        <img
+          src="/logo-mark.svg"
+          alt="AQUASOL Logo"
+          className="w-14 h-14 rounded-2xl mx-auto shadow-md"
+        />
         <div className="mt-4 flex items-center justify-center leading-none">
           <span className="text-3xl font-black text-[#0284C7] tracking-tight">AQUA</span>
           <span className="text-3xl font-black text-[#D97706] tracking-tight">SOL</span>

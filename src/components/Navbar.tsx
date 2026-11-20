@@ -99,10 +99,11 @@ export default function Navbar() {
           
           {/* Brand Mark: AQUASOL */}
           <Link href="/" className="flex items-center space-x-2.5 group select-none py-1">
-            <div className="w-9 h-9 rounded-lg bg-[#0A192F] p-0.5 border border-slate-300 flex items-center justify-center relative overflow-hidden shadow-xs group-hover:scale-105 transition-transform">
-              <Droplets className="w-4 h-4 text-[#0284C7] absolute left-1 bottom-1" />
-              <Sun className="w-4 h-4 text-[#D97706] absolute right-1 top-1" />
-            </div>
+            <img
+              src="/logo-mark.svg"
+              alt="AQUASOL Logo"
+              className="w-9 h-9 rounded-lg shadow-xs group-hover:scale-105 transition-transform shrink-0"
+            />
             <div className="flex flex-col">
               <div className="flex items-center leading-none">
                 <span className="text-xl font-black text-[#0284C7] tracking-tight">AQUA</span>

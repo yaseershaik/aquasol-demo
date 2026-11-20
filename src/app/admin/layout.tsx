@@ -125,10 +125,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             {/* Matching AQUASOL Brand Logo */}
             <div className="flex items-center space-x-4">
               <Link href="/admin" className="flex items-center space-x-2.5 group select-none py-1">
-                <div className="w-9 h-9 rounded-lg bg-[#0A192F] p-0.5 border border-slate-300 flex items-center justify-center relative overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
-                  <Droplets className="w-4 h-4 text-[#0284C7] absolute left-1 bottom-1" />
-                  <Sun className="w-4 h-4 text-[#D97706] absolute right-1 top-1" />
-                </div>
+                <img
+                  src="/logo-mark.svg"
+                  alt="AQUASOL Logo"
+                  className="w-9 h-9 rounded-lg shadow-sm group-hover:scale-105 transition-transform shrink-0"
+                />
                 <div className="flex flex-col">
                   <div className="flex items-center leading-none">
                     <span className="text-xl font-black text-[#0284C7] tracking-tight">AQUA</span>
@@ -290,10 +291,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <footer className="bg-white border-t border-slate-200 text-slate-500 text-xs py-5 mt-auto">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center space-x-2">
-            <div className="w-5 h-5 rounded bg-[#0A192F] p-0.5 flex items-center justify-center relative overflow-hidden">
-              <Droplets className="w-2.5 h-2.5 text-[#0284C7] absolute left-0.5 bottom-0.5" />
-              <Sun className="w-2.5 h-2.5 text-[#D97706] absolute right-0.5 top-0.5" />
-            </div>
+            <img
+              src="/logo-mark.svg"
+              alt="AQUASOL Logo"
+              className="w-5 h-5 rounded shrink-0"
+            />
             <span className="font-bold text-slate-800">
               AQUASOL Systems Console
             </span>

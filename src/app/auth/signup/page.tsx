@@ -82,10 +82,13 @@ export default function SignUpPage() {
       <div className="max-w-xl w-full bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
         {/* Header */}
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-navy-950 text-white font-bold text-xl mb-4 shadow-sm">
-            <span className="text-aqua-400">A</span>
-            <span className="text-solar-400">S</span>
-          </div>
+          <Link href="/" className="inline-block">
+            <img
+              src="/logo-mark.svg"
+              alt="AQUASOL Logo"
+              className="w-12 h-12 rounded-xl mb-3 shadow-sm mx-auto hover:scale-105 transition-transform"
+            />
+          </Link>
           <h2 className="text-2xl font-bold tracking-tight text-navy-950">
             Create Your AquaSol Account
           </h2>
