@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { formatINR } from "@/lib/format";
 import AddToCartButton from "./AddToCartButton";
@@ -59,7 +61,12 @@ export default function ProductCard({ product }: ProductCardProps) {
             alt={product.name}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300 relative z-10"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 relative z-10"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.onerror = null;
+              target.src = isRo ? "/images/real/ro-membrane-4040.jpg" : "/images/real/monocrystalline-panel.jpg";
+            }}
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 p-4">

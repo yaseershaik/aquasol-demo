@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="memBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="30%" stop-color="#38BDF8"/>
+      <stop offset="70%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="coreTube" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#F8FAFC"/>
+  <!-- Central Permeate Tube -->
+  <rect x="40" y="185" width="520" height="30" rx="4" fill="url(#coreTube)" stroke="#64748B" stroke-width="2"/>
+  <!-- Membrane Spiral Wound Body -->
+  <rect x="100" y="120" width="400" height="160" rx="14" fill="url(#memBody)" stroke="#0284C7" stroke-width="3"/>
+  <!-- Brine Seal Tape Rings -->
+  <rect x="120" y="120" width="16" height="160" fill="#F59E0B" opacity="0.9"/>
+  <rect x="464" y="120" width="16" height="160" fill="#F59E0B" opacity="0.9"/>
+  <rect x="280" y="120" width="40" height="160" fill="#0369A1" opacity="0.4"/>
+  <!-- Label Badge -->
+  <rect x="220" y="160" width="160" height="80" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="300" y="195" font-family="system-ui, sans-serif" font-weight="900" font-size="16" fill="#0F172A" text-anchor="middle">DOW FILMTEC™</text>
+  <text x="300" y="220" font-family="system-ui, sans-serif" font-weight="700" font-size="12" fill="#0284C7" text-anchor="middle">BW30-4040 RO ELEMENT</text>
+</svg>

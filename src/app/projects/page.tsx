@@ -138,7 +138,7 @@ const projectsData: Project[] = [
     location: "Bhimili Coastal Corridor, AP",
     vertical: "SOLAR",
     capacity: "25 kWp On-Grid",
-    image: "/images/real/solar-rooftop-array.jpg",
+    image: "/images/real/solar-hotel-resort.jpg",
     metrics: [
       { label: "Monthly Output", value: "3,100 Units" },
       { label: "CO₂ Offset", value: "28 Tons/yr" },

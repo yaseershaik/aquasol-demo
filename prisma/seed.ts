@@ -115,8 +115,8 @@ async function main() {
       isFeatured: true,
       isPublished: true,
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=800&auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&auto=format&fit=crop&q=80"
+        "/images/real/ro-membrane-4040.jpg",
+        "/uploads/dow-membrane-4040.svg"
       ]),
       specifications: JSON.stringify([
         { key: "Flow Rate", value: "2,400 Gallons / Day (~380 LPH)" },
@@ -143,7 +143,8 @@ async function main() {
       isFeatured: true,
       isPublished: true,
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80"
+        "/images/real/ro-membrane-8040.jpg",
+        "/uploads/dow-membrane-4040.svg"
       ]),
       specifications: JSON.stringify([
         { key: "Active Area", value: "400 sq. ft." },
@@ -169,7 +170,8 @@ async function main() {
       isFeatured: true,
       isPublished: true,
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=800&auto=format&fit=crop&q=80"
+        "/images/real/water-pump.jpg",
+        "/uploads/grundfos-cr-pump.svg"
       ]),
       specifications: JSON.stringify([
         { key: "Motor Power", value: "1.5 kW / 2.0 HP" },
@@ -195,7 +197,8 @@ async function main() {
       isFeatured: false,
       isPublished: true,
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1584467735871-8e85353a8413?w=800&auto=format&fit=crop&q=80"
+        "/images/real/frp-pressure-vessel.jpg",
+        "/uploads/ro-plant-skid.svg"
       ]),
       specifications: JSON.stringify([
         { key: "Dimensions", value: "10 Inch Diameter x 54 Inch Height" },
@@ -221,8 +224,9 @@ async function main() {
       isFeatured: true,
       isPublished: true,
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1509391365260-2e82b43b67e8?w=800&auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1508873696983-2df570464756?w=800&auto=format&fit=crop&q=80"
+        "/images/real/monocrystalline-panel.jpg",
+        "/images/real/solar-rooftop-array.jpg",
+        "/uploads/solar-rooftop-array.svg"
       ]),
       specifications: JSON.stringify([
         { key: "Rated Output Power", value: "540 Watts Peak" },
@@ -249,7 +253,8 @@ async function main() {
       isFeatured: false,
       isPublished: true,
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1548611716-3047b198c257?w=800&auto=format&fit=crop&q=80"
+        "/images/real/solar-inverter.jpg",
+        "/uploads/growatt-inverter.svg"
       ]),
       specifications: JSON.stringify([
         { key: "AC Output Power", value: "5,000 Watts" },
@@ -312,7 +317,7 @@ async function main() {
       location: "Guntur, Andhra Pradesh",
       capacity: "2,000 Liters / Hour",
       summary: "Turnkey RO installation treating 1,850 PPM borewell water down to 80 PPM for dialysis, ICU, and campus drinking water.",
-      imageUrl: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&auto=format&fit=crop&q=80",
+      imageUrl: "/images/real/ro-desalination.jpg",
     },
     {
       title: "10 kW Rooftop Solar Net-Metered Villa Installation",
@@ -320,7 +325,7 @@ async function main() {
       location: "Visakhapatnam, Andhra Pradesh",
       capacity: "10 kW On-Grid Bifacial System",
       summary: "Tier-1 bifacial panels with elevated HDG framework. Successfully sanctioned under PM Surya Ghar with APEPDCL net-metering.",
-      imageUrl: "https://images.unsplash.com/photo-1509391365260-2e82b43b67e8?w=800&auto=format&fit=crop&q=80",
+      imageUrl: "/images/real/solar-rooftop-residential.jpg",
     },
   ];
 
@@ -330,6 +335,11 @@ async function main() {
     });
     if (!existing) {
       await prisma.portfolioProject.create({ data: proj });
+    } else {
+      await prisma.portfolioProject.update({
+        where: { id: existing.id },
+        data: { imageUrl: proj.imageUrl },
+      });
     }
   }
   console.log("Seeded portfolio projects.");

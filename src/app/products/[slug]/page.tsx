@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { formatINR } from "@/lib/format";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductCard from "@/components/ProductCard";
+import ProductImage from "@/components/ProductImage";
 import {
   ShieldCheck,
   Truck,
@@ -116,10 +117,11 @@ export default async function ProductDetailPage({
         <div className="space-y-4">
           <div className="aspect-square bg-slate-50/70 border border-[#E2E8F0] rounded-2xl flex items-center justify-center overflow-hidden p-6 shadow-xs">
             {images.length > 0 ? (
-              <img
+              <ProductImage
                 src={images[0]}
                 alt={product.name}
-                className="w-full h-full object-contain"
+                fallbackSrc={isRo ? "/images/real/ro-membrane-4040.jpg" : "/images/real/monocrystalline-panel.jpg"}
+                className="w-full h-full object-cover rounded-xl"
               />
             ) : (
               <div className="text-center text-slate-400 p-8">
@@ -140,10 +142,11 @@ export default async function ProductDetailPage({
                   key={idx}
                   className="w-20 h-20 shrink-0 border border-[#CBD5E1] rounded-lg bg-slate-50 p-1 overflow-hidden"
                 >
-                  <img
+                  <ProductImage
                     src={img}
                     alt={`${product.name} view ${idx + 1}`}
-                    className="w-full h-full object-contain"
+                    fallbackSrc={isRo ? "/images/real/ro-membrane-4040.jpg" : "/images/real/monocrystalline-panel.jpg"}
+                    className="w-full h-full object-cover rounded"
                   />
                 </div>
               ))}

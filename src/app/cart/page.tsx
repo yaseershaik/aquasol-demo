@@ -131,7 +131,12 @@ export default function CartPage() {
                         <img
                           src={item.imageUrl}
                           alt={item.name}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover rounded"
+                          onError={(e) => {
+                            const target = e.currentTarget;
+                            target.onerror = null;
+                            target.src = "/images/real/ro-membrane-4040.jpg";
+                          }}
                         />
                       ) : (
                         <Package className="w-8 h-8 text-gray-400 stroke-[1.5]" />
